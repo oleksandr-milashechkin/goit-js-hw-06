@@ -19,6 +19,7 @@ console.log(galleryRef);
 
 //Создаём разметку для каждого элемента массива
 const markup = images
-.map((image) => `<li><img src="${image.url}" alt="${image.alt}" width="300" height="300"></li>`);
+.map((image) => `<li><img src="${image.url}" alt="${image.alt}" width="300" height="300"></li>`)
+.join("");
 
 galleryRef.insertAdjacentHTML('beforeend', markup);

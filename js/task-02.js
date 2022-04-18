@@ -13,10 +13,21 @@ const ingredientsRef = document.querySelector('#ingredients');
 
 //Перебираем массив, создавая элемент списка на каждый элемент массива ingredients
 
-ingredients.forEach(elem => {
-const listItem = document.createElement('li');
-listItem.textContent = `${elem}`;
-listItem.classList.add('item');
-ingredientsRef.append(listItem);
-console.log(listItem);
-});
+//ПОЧЕМУ-ТО НЕ РАБОТАЕТ
+//const ingredientsList = [...ingredients].map(elem => {
+//const listItem = document.createElement('li');
+//listItem.textContent = elem;
+//listItem.classList.add('item');
+
+//console.log(listItem);
+//return listItem;
+//});
+//ingredientsRef.append(ingredientsList);
+
+ingredientsRef.append(...ingredients.map(elem => {
+  const listItem = document.createElement('li');
+  listItem.textContent = elem;
+  listItem.classList.add('item');
+  console.log(listItem);
+  return listItem;
+}));
